@@ -16,6 +16,7 @@ const Container = styled.div`
     padding-right: 1rem;
   }
 `;
+
 const Back = styled.div`
   position: relative;
   margin-top: 17px;
@@ -24,45 +25,30 @@ const Back = styled.div`
 
 const Title = styled.div`
   position: relative;
-  top: -23px;
-  left: 150px;
+  margin-top: 30px;
+  margin-left: 30px;
 `;
 
 const SubTitle = styled.div`
   position: relative;
-  top: 25px;
-  left: 25px;
-`;
-
-const InputName = styled.input`
-  position: relative;
-  width: 300px;
-  height: 50px;
-  left: 22px;
-  top: 55px;
-  border-radius: 7px;
-  border: 1.5px solid #0085ff;
-  font-size: 20px;
-  padding-left: 15px;
-  ::placeholder {
-    color: #7c7c7c;
-  }
+  margin-top: 10px;
+  margin-left: 30px;
 `;
 
 const NextBtn = styled.div`
   position: relative;
-  top: 470px;
+  margin-top: 40px;
   left: 22px;
 `;
 
-const Login = () => {
+const Screenshare = () => {
   const navigate = useNavigate();
 
-  const gotoPasswd = () => {
-    navigate("/Passwd");
+  const gotoProgress = () => {
+    navigate("/ScreenProgress");
   };
   const gotoBack = () => {
-    navigate("/");
+    navigate("/GroupHome");
   };
 
   return (
@@ -71,17 +57,16 @@ const Login = () => {
         <img src={`${process.env.PUBLIC_URL}/images/backbtn.svg`} />
       </Back>
       <Title>
-        <img src={`${process.env.PUBLIC_URL}/images/logintitle.svg`} />
+        <img src={`${process.env.PUBLIC_URL}/images/scrtitle.svg`} />
       </Title>
       <SubTitle>
-        <img src={`${process.env.PUBLIC_URL}/images/numbertitle.svg`} />
+        <img src={`${process.env.PUBLIC_URL}/images/scrsubtitle.svg`} />
       </SubTitle>
-      <InputName placeholder="010-1234-5678"></InputName>
-      <NextBtn onClick={gotoPasswd}>
-        <img src={`${process.env.PUBLIC_URL}/images/nextbtn.svg`} />
+      <NextBtn onClick={gotoProgress}>
+        <img src={`${process.env.PUBLIC_URL}/images/sharestartbtn.svg`} />
       </NextBtn>
     </Container>
   );
 };
 
-export default Login;
+export default Screenshare;

@@ -4,12 +4,11 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: relative;
-  margin: 30px 0;
+  margin: 30px auto;
   max-width: 375px;
   height: 740px;
   background: white;
   border: 1px solid gray;
-  margin: auto;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -58,9 +57,16 @@ const NextBtn = styled.div`
 `;
 
 const Passwd = () => {
+  const navigate = useNavigate();
+  const gotoBack = () => {
+    navigate("/Login");
+  };
+  const gotoHome = () => {
+    navigate("/Home");
+  };
   return (
     <Container>
-      <Back>
+      <Back onClick={gotoBack}>
         <img src={`${process.env.PUBLIC_URL}/images/backbtn.svg`} />
       </Back>
       <Title>
@@ -70,7 +76,7 @@ const Passwd = () => {
         <img src={`${process.env.PUBLIC_URL}/images/passwdtitle.svg`} />
       </SubTitle>
       <InputName placeholder="영어, 숫자 포함 8자리를 입력하세요."></InputName>
-      <NextBtn>
+      <NextBtn onClick={gotoHome}>
         <img src={`${process.env.PUBLIC_URL}/images/startbtn.svg`} />
       </NextBtn>
     </Container>
