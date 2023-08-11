@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import Passwd from "./pages/Passwd";
-// import Splash from "./pages/Splash";
+import Splash from "./pages/Splash";
 import Home from "./pages/Home";
 import GroupHome from "./pages/GroupHome";
 import Album from "./pages/Album";
@@ -28,7 +28,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
-          {/* <Route path="/" element={<Splash />} /> */}
+          <Route path="/" element={<Splash />} />
           <Route path="/Login" element={<Login />} />{" "}
           <Route path="/Passwd" element={<Passwd />} />{" "}
           <Route path="/Home" element={<Home />} />{" "}

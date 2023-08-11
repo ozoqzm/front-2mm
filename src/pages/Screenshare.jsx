@@ -123,7 +123,7 @@ const Screenshare = () => {
           <img src={`${process.env.PUBLIC_URL}/images/copybtn.svg`} />
         </CopyBtn>
         {/* 복사 상태에 따라 텍스트를 표시하는 요소 */}
-        <CopyAlert>{copied ? "복사됨" : " "} </CopyAlert>
+        <CopyAlert>{copied ? "주소가 복사되었습니다" : " "} </CopyAlert>
       </BoxZone>
       {/* 수정된 NextBtn 컴포넌트 */}
       <NextBtn onClick={gotoProgress}>
