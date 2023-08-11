@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import Passwd from "./pages/Passwd";
-//import Splash from "./pages/Splash";
+// import Splash from "./pages/Splash";
 import Home from "./pages/Home";
 import GroupHome from "./pages/GroupHome";
 import Album from "./pages/Album";
@@ -21,6 +21,7 @@ import Date_List from "./pages/Date_List";
 import Date_Detail from "./pages/Date_Detail";
 import Date_Plus from "./pages/Date_Plus";
 import Date_Write from "./pages/Date_Write";
+import AlbumDetail from "./pages/AlbumDetail";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="/Date_Detail" element={<Date_Detail />} />{" "}
           <Route path="/Date_Plus" element={<Date_Plus />} />{" "}
           <Route path="/Date_Write" element={<Date_Write />} />{" "}
+          <Route path="/AlbumDetail" element={<AlbumDetail />} />{" "}
         </Routes>
       </div>
     </BrowserRouter>

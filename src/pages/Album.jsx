@@ -49,15 +49,38 @@ const PicZone = styled.div`
 `;
 const PicBox = styled.div`
   position: relative;
-  //   width: 170px;
-  //   height: 170px;
-  margin-left: 7px;
-  margin-bottom: 3px;
-  border-radius: 6px;
-  background: gray;
+  margin-left: 10px;
+  margin-bottom: 5px;
   display: inline-block;
 `;
 
+const AlbumItem = ({ postID }) => {
+  const navigate = useNavigate();
+
+  const goAlbumDetail = () => {
+    navigate(`/AlbumDetail`); // user_id, post_id read에 전달. 원래는 뒤에 ${postID}
+  };
+  return (
+    <>
+      <PicBox onClick={goAlbumDetail}>
+        {" "}
+        <img
+          style={{
+            width: "165px",
+            height: "165px",
+            "border-radius": "6px",
+            objectFit: "cover",
+          }}
+          src={`${process.env.PUBLIC_URL}/images/familypic.svg`}
+        />
+        {/* <img
+        src={post && post.image}
+        style={{ display: "block", margin: "auto", width: "300px"  filter: "brightness(60%)"}}
+      /> -> 이건 연동할 때 이미지 */}
+      </PicBox>
+    </>
+  );
+};
 const Album = () => {
   const navigate = useNavigate();
 
@@ -97,29 +120,20 @@ const Album = () => {
         <img src={`${process.env.PUBLIC_URL}/images/albumtitle.svg`} />
       </Title>
       <PicZone>
-        <PicBox>
-          <img
-            style={{ width: "170px", height: "170px" }}
-            src={`${process.env.PUBLIC_URL}/images/familypic.svg`}
-          />
-        </PicBox>
-        <PicBox></PicBox>
-        <PicBox></PicBox>
-        <PicBox></PicBox>
-        <PicBox></PicBox>
-        <PicBox></PicBox>
-        <PicBox></PicBox>
-        <PicBox></PicBox>
-        <PicBox></PicBox>
-        <PicBox></PicBox>
-        <PicBox></PicBox>
+        <AlbumItem></AlbumItem>
+        <AlbumItem></AlbumItem>
+        <AlbumItem></AlbumItem>
+        <AlbumItem></AlbumItem>
+        <AlbumItem></AlbumItem>
+        <AlbumItem></AlbumItem>
+        <AlbumItem></AlbumItem>
         {/* {postList.map((e) => (
-          <PicBox>
+          <AlbumItem>
             <img
-              src={e && e.image}
+              src={post && post.image}
               style={{ display: "block", width: "170px", height: "170px"" }}
             /> // 반복문으로 돌려서 배열 안에 저장된 객체들의 이미지들 출력
-          </PicBox>
+          </AlbumItem>
         ))} */}
       </PicZone>
     </Container>
