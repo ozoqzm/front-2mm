@@ -20,6 +20,11 @@ const Container = styled.div`
     padding-right: 1rem;
   }
 `;
+const Back = styled.div`
+  position: relative;
+  margin-top: 17px;
+  margin-left: 15px;
+`;
 
 const ButtonContainer = styled.div`
   position: absolute;
@@ -75,6 +80,11 @@ const StopBtn = styled.button`
 `;
 
 const ScreenProgress = () => {
+  const navigate = useNavigate();
+
+  const gotoBack = () => {
+    navigate("/Screenshare");
+  };
   const videoElem = useRef(null);
   const logElem = useRef(null);
   const [displayMediaStream, setDisplayMediaStream] = useState(null);
@@ -134,6 +144,9 @@ const ScreenProgress = () => {
 
   return (
     <Container>
+      <Back onClick={gotoBack}>
+        <img src={`${process.env.PUBLIC_URL}/images/backbtn.svg`} />
+      </Back>
       <video ref={videoElem} autoPlay width="375px" height="740px"></video>
       <br />
       <ButtonContainer>

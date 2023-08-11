@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Container = styled.div`
   position: relative;
   margin: 30px 0;
-  width: 375px;
+  max-width: 375px;
   height: 740px;
   background: #fff;
   border: 1px solid gray;
@@ -17,8 +17,8 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 `;
 const GroupImage = styled.div`
@@ -29,6 +29,8 @@ const GroupImage = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 0px 0px 17.76px 17.76px;
+  width: 375px;
+  height: 200px;
 `;
 const GroupTitle = styled.div`
   position: absolute;
@@ -149,9 +151,9 @@ const GroupDetail = () => {
 
   const gotoAddMember = () => {
     // 멤버 추가하기 페이지로 이동 (임시)
-    navigate("/");
+    // 여기로 이동하고 끝이 맞나? 아님 추가 페이지를 하나 더 만들어야 됨?
+    navigate("/Signup4_new");
   };
-  // 뒤로 가기 버튼은 안 만들어도 되나??
 
   return (
     <Container>
@@ -159,8 +161,9 @@ const GroupDetail = () => {
         <GroupImage>
           <img
             style={{
-              width: "375px",
-              height: "200px",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
               "border-radius": "0px 0px 17.76px 17.76px",
               filter: "brightness(60%)",
             }}
@@ -183,7 +186,7 @@ const GroupDetail = () => {
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
           </ProfileImg>
-          <AddText>멤버 추가하기</AddText>
+          <AddText onClick={gotoAddMember}>멤버 추가하기</AddText>
         </Box>
       </BoxZone>
       <DeleteBtn>모임 삭제하기</DeleteBtn>

@@ -6,7 +6,7 @@ import GroupItem from "./GroupItem";
 const Container = styled.div`
   position: relative;
   margin: 30px 0;
-  width: 375px;
+  max-width: 375px;
   height: 740px;
   background: #f8f8f8;
   border: 1px solid gray;
@@ -18,8 +18,8 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 `;
 
@@ -29,6 +29,7 @@ const BluePoint = styled.div`
   flex-direction: column;
   align-items: center;
   color: white;
+  width: 100%;
 `;
 
 const Mark = styled.div`
@@ -127,7 +128,7 @@ const GroupHome = () => {
       <StickyBox>
         <BluePoint>
           <img
-            style={{ width: "375px" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
             src={`${process.env.PUBLIC_URL}/images/bluepoint.svg`}
           />
           <Mark>

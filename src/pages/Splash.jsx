@@ -12,16 +12,18 @@ const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 `;
 const TextBox1 = styled.div`
   position: relative;
   margin-top: 100px;
+  margin-left: 15px;
 `;
 const TextBox2 = styled.div`
   position: relative;
+  margin-left: 15px;
 `;
 const CenterZone = styled.div`
   position: relative;
