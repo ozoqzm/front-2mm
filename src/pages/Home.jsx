@@ -65,12 +65,30 @@ const AddBox = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+const LogoutBtn = styled.div`
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px; /* 141.667% */
+  letter-spacing: -0.5px;
+  margin-bottom: 50px;
+  margin-top: -45px;
+  left: 130px;
+`;
 
 const Home = () => {
   const navigate = useNavigate();
 
   const gotoAdd = () => {
-    navigate("/G");
+    navigate("/Signup1_new");
+  };
+  const logoutfunc = () => {
+    // 로그아웃 부분 추가..
+    navigate("/");
   };
   return (
     <Container>
@@ -83,6 +101,7 @@ const Home = () => {
           <Mark>
             <img src={`${process.env.PUBLIC_URL}/images/heartmark.svg`} />
           </Mark>
+          <LogoutBtn onClick={logoutfunc}>로그아웃</LogoutBtn>
         </BluePoint>
       </StickyBox>
       <BoxZone>

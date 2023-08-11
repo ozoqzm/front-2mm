@@ -110,7 +110,7 @@ const GroupHome = () => {
   // 이동 링크 뒤에.. userId같은 거 넘겨줘야하나
   // 게시판 이동
   const gotoBoard = () => {
-    //navigate("/Album");
+    navigate("/Post1");
   };
   const gotoAlbum = () => {
     navigate("/Album");

@@ -16,28 +16,78 @@ const Container = styled.div`
     padding-right: 1rem;
   }
 `;
-
-const NextBtn = styled.div`
+const TextBox1 = styled.div`
   position: relative;
-  top: 470px;
-  left: 22px;
+  margin-top: 100px;
+`;
+const TextBox2 = styled.div`
+  position: relative;
+`;
+const CenterZone = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 290px;
+`;
+const DesignImg = styled.div`
+  position: absolute;
+  bottom: 80px;
+`;
+
+const KakaoBtn = styled.div`
+  position: relative;
+  margin-bottom: 7px;
+`;
+const SignUpBtn = styled.div`
+  position: relative;
+  margin-bottom: 7px;
+`;
+const LoginBtn = styled.div`
+  position: relative;
 `;
 
 const Splash = () => {
   const navigate = useNavigate();
 
-  const gotoPasswd = () => {
-    navigate("/Passwd");
+  const gotoKakao = () => {
+    // 추후 설정
+    //navigate("/");
   };
-  const gotoBack = () => {
-    navigate("/");
+  const gotoSignUp = () => {
+    navigate("/Membership");
+  };
+  const gotoLogin = () => {
+    navigate("/Login");
   };
 
   return (
     <Container>
-      <NextBtn onClick={gotoPasswd}>
-        <img src={`${process.env.PUBLIC_URL}/images/nextbtn.svg`} />
-      </NextBtn>
+      <TextBox1>
+        <img src={`${process.env.PUBLIC_URL}/images/2mmexplain.svg`} />
+      </TextBox1>
+      <TextBox2>
+        {" "}
+        <img src={`${process.env.PUBLIC_URL}/images/2mm.svg`} />
+      </TextBox2>
+      <DesignImg>
+        <img
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          src={`${process.env.PUBLIC_URL}/images/splashdesign.svg`}
+        />
+      </DesignImg>
+      <CenterZone>
+        <KakaoBtn onClick={gotoKakao}>
+          <img src={`${process.env.PUBLIC_URL}/images/kakaobtn_s.svg`} />
+        </KakaoBtn>
+        <SignUpBtn onClick={gotoSignUp}>
+          <img src={`${process.env.PUBLIC_URL}/images/signupbtn_s.svg`} />
+        </SignUpBtn>
+        <LoginBtn onClick={gotoLogin}>
+          <img src={`${process.env.PUBLIC_URL}/images/loginbtn_s.svg`} />
+        </LoginBtn>
+      </CenterZone>
     </Container>
   );
 };
