@@ -4,11 +4,12 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: relative;
-  margin: 30px auto;
+  margin: 30px 0;
   max-width: 375px;
   height: 740px;
   background: white;
   border: 1px solid gray;
+  margin: auto;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -16,6 +17,7 @@ const Container = styled.div`
     padding-right: 1rem;
   }
 `;
+
 const Back = styled.div`
   position: relative;
   margin-top: 17px;
@@ -25,7 +27,7 @@ const Back = styled.div`
 const Title = styled.div`
   position: relative;
   top: -23px;
-  left: 150px;
+  left: 130px;
 `;
 
 const SubTitle = styled.div`
@@ -34,54 +36,29 @@ const SubTitle = styled.div`
   left: 25px;
 `;
 
-const InputName = styled.input`
-  position: relative;
-  width: 300px;
-  height: 50px;
-  left: 22px;
-  top: 55px;
-  border-radius: 7px;
-  border: 1.5px solid #0085ff;
-  font-size: 20px;
-  padding-left: 15px;
-  ::placeholder {
-    color: #7c7c7c;
-  }
-`;
-
 const NextBtn = styled.div`
   position: relative;
-  top: 470px;
+  top: 500px;
   left: 22px;
 `;
 
-const Login = () => {
-  const navigate = useNavigate();
-
-  const gotoPasswd = () => {
-    navigate("/Passwd");
-  };
-  const gotoBack = () => {
-    navigate("/");
-  };
-
+const Date_Plus = () => {
   return (
     <Container>
-      <Back onClick={gotoBack}>
+      <Back>
         <img src={`${process.env.PUBLIC_URL}/images/backbtn.svg`} />
       </Back>
       <Title>
-        <img src={`${process.env.PUBLIC_URL}/images/logintitle.svg`} />
+        <img src={`${process.env.PUBLIC_URL}/images/date_plus.svg`} />
       </Title>
       <SubTitle>
-        <img src={`${process.env.PUBLIC_URL}/images/numbertitle.svg`} />
+        <img src={`${process.env.PUBLIC_URL}/images/date_select.svg`} />
       </SubTitle>
-      <InputName placeholder="010-1234-5678"></InputName>
-      <NextBtn onClick={gotoPasswd}>
-        <img src={`${process.env.PUBLIC_URL}/images/nextbtn.svg`} />
+      <NextBtn>
+        <img src={`${process.env.PUBLIC_URL}/images/newbtn.svg`} />
       </NextBtn>
     </Container>
   );
 };
 
-export default Login;
+export default Date_Plus;
