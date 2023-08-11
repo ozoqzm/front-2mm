@@ -63,13 +63,10 @@ const CopyBtn = styled.div`
 `;
 
 const NextBtn = styled.div`
-  position: absolute; /* 위치를 absolute로 변경 */
-  bottom: 30px; /* 바닥에 위치 */
-  width: 100%; /* 너비 100%로 설정 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: absolute; /* 위치를 absolute로 설정 */
+  bottom: 30px;
+  left: 50%; /* 가운데로 정렬하기 위해 왼쪽 위치 조정 */
+  transform: translateX(-50%);
 `;
 
 const CopyAlert = styled.div`
@@ -118,14 +115,13 @@ const Screenshare = () => {
           <img src={`${process.env.PUBLIC_URL}/images/explainscr.svg`} />
         </SubTitle>
         {/* url 받아오기!!!! get으로... */}
-        <CopyBox ref={copyBoxRef}>초대코드가 뜰 것</CopyBox>
+        <CopyBox ref={copyBoxRef}>주소가 뜰 것</CopyBox>
         <CopyBtn onClick={handleCopyClick}>
           <img src={`${process.env.PUBLIC_URL}/images/copybtn.svg`} />
         </CopyBtn>
         {/* 복사 상태에 따라 텍스트를 표시하는 요소 */}
         <CopyAlert>{copied ? "주소가 복사되었습니다" : " "} </CopyAlert>
       </BoxZone>
-      {/* 수정된 NextBtn 컴포넌트 */}
       <NextBtn onClick={gotoProgress}>
         <img src={`${process.env.PUBLIC_URL}/images/sharestartbtn.svg`} />
       </NextBtn>
