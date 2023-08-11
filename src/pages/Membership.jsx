@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
 
 const Container = styled.div`
   position: relative;
@@ -67,37 +66,9 @@ const Membership = () => {
     navigate("/Splash");
   };
 
-  // axios 연동
-  const [inputs, setInputs] = useState({
-    username: "",
-  });
-
-  const { username } = inputs;
-  const onChange = (e) => {
-    const { value, name } = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value,
-    });
-  };
-
-  const onSubmit = () => {
-    try {
-      // HTTP POST 요청으로 새로운 게시물 생성
-      axios
-        .post("http://127.0.0.1:8000/username/", {
-          username: inputs.username,
-        })
-        .then(() => window.location.reload());
-
-      // 입력값 초기화
-      setInputs({
-        username: "",
-      });
-    } catch (error) {
-      // 에러 발생 시 에러 처리
-      console.error("Error creating new post:", error);
-    }
+  // back_btn 이동
+  const onClickBtn = () => {
+    navigate("/Membership2");
   };
 
   return (
@@ -120,12 +91,8 @@ const Membership = () => {
           alt="subtitle"
         />
       </SubTitle>
-      <InputName
-        placeholder="홍길동"
-        value={username}
-        onChange={onChange}
-      ></InputName>
-      <NextBtn onClick={onSubmit}>
+      <InputName placeholder="홍길동"></InputName>
+      <NextBtn onClick={onClickBtn}>
         <img src={`${process.env.PUBLIC_URL}/images/next_btn.svg`} alt="btn" />
       </NextBtn>
     </Container>

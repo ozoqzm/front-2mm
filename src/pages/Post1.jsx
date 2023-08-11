@@ -131,7 +131,7 @@ const Post1 = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const onClickBack = () => {
-    navigate("/Main");
+    navigate("/GroupHome");
   };
 
   const onClickBtn = () => {
