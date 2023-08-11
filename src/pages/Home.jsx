@@ -5,12 +5,15 @@ import GroupItem from "./GroupItem";
 
 const Container = styled.div`
   position: relative;
-  margin: 30px 0;
-  max-width: 375px;
+  width: 375px;
   height: 740px;
-  background: white;
+  background: #fff;
   border: 1px solid gray;
-  margin: auto;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -19,23 +22,29 @@ const Container = styled.div`
   }
 `;
 
-const Mark = styled.div`
-  position: relative;
-  top: -200px;
-  margin-left: 15px;
-`;
-
 const BluePoint = styled.div`
   position: relative;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+`;
+
+const Mark = styled.div`
+  position: relative;
+  margin-top: -190px;
+  left: -150px;
+`;
+const StickyBox = styled.div`
+  position: sticky;
+  top: 0;
 `;
 const BoxZone = styled.div`
   position: relative;
   max-width: 346px;
-  height: 570px;
+  height: 600px;
   margin: auto;
-  margin-bottom: 0px;
-  top: -150px;
+  top: -30px;
   overflow-y: scroll;
   overflow-x: hidden;
   &::-webkit-scrollbar {
@@ -44,27 +53,18 @@ const BoxZone = styled.div`
     background: transparent;
   }
 `;
-const Box = styled.div`
-  position: relative;
-  margin: auto;
-  margin-bottom: 10px;
-  width: 346px;
-  height: 175px;
-  background: pink;
-  border-radius: 17.76px;
-`;
 const AddBox = styled.div`
   position: relative;
   margin: auto;
-  width: 346px;
+  width: 340px;
   height: 175px;
   margin-bottom: 10px;
   border-radius: 17.76px;
-  // border-radius: 17.76px;
-  // border: 2px dashed #0057ff;
+  border: 2px dashed #0057ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
-
-const SettingBtn = styled.button``;
 
 const Home = () => {
   const navigate = useNavigate();
@@ -74,21 +74,28 @@ const Home = () => {
   };
   return (
     <Container>
-      <BluePoint>
-        <img
-          width="375px"
-          src={`${process.env.PUBLIC_URL}/images/bluepoint.svg`}
-        />
-        <Mark>
-          <img src={`${process.env.PUBLIC_URL}/images/heartmark.svg`} />
-        </Mark>
-      </BluePoint>
+      <StickyBox>
+        <BluePoint>
+          <img
+            width="375px"
+            src={`${process.env.PUBLIC_URL}/images/bluepoint.svg`}
+          />
+          <Mark>
+            <img src={`${process.env.PUBLIC_URL}/images/heartmark.svg`} />
+          </Mark>
+        </BluePoint>
+      </StickyBox>
       <BoxZone>
+        {/* 사용자의 그룹 전체 리스트들 위에 불러오고.. 여기다간 GroupItem반복문 써서 돌리기
+        -> 돌릴 때 props로 그룹 코드 전달 해야함 */}
         <GroupItem></GroupItem>
         <GroupItem></GroupItem>
         <GroupItem></GroupItem>
-        <AddBox>
-          <img src={`${process.env.PUBLIC_URL}/images/addbox.svg`} />
+        <AddBox onClick={gotoAdd}>
+          <img
+            style={{ margin: "40px" }}
+            src={`${process.env.PUBLIC_URL}/images/addbox2.svg`}
+          />
         </AddBox>
       </BoxZone>
     </Container>
