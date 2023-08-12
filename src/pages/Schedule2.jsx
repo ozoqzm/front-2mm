@@ -79,7 +79,7 @@ const Schedule2 = () => {
   };
 
   const onClickPost = () => {
-    navigate("/Schedule3");
+    navigate("/Date_Write");
   };
 
   const [recognizedText, setRecognizedText] = useState(""); // 음성으로 변환된 텍스트 상태

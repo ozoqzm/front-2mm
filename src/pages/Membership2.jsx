@@ -64,16 +64,9 @@ const Membership2 = () => {
     navigate("/Membership3");
   };
 
-  // back_btn 이동
-  const onClickBack = () => {
-    navigate("/Membership");
-  };
-
   return (
     <Container>
-      <Back onClick={onClickBack}>
-        <img src={`${process.env.PUBLIC_URL}/images/back_btn.svg`} alt="back" />
-      </Back>
+      <Back>&nbsp;</Back>
       <Title>
         <img
           src={`${process.env.PUBLIC_URL}/images/title_text.svg`}

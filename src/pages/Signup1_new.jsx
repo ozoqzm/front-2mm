@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 740px;
   background: white;
   border: 1px solid gray;
-  margin: auto;
+  margin: 30px auto;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -59,8 +59,7 @@ const Signup1_new = () => {
   const navigate = useNavigate(); // useNavigate 초기화
 
   const handleNextClick = () => {
-    navigate("/signup2_new", { state: { group_name: groupname } }); // 그룹 이름을 다음 페이지로 전달
-    navigate("/signup2_old", { state: { group_name: groupname } }); // 그룹 이름을 다음 페이지로 전달
+    navigate("/signup2_new"); // 그룹 이름을 다음 페이지로 전달
   };
 
   const [groupname, setGroupname] = useState(""); // 그룹 이름 상태 추가

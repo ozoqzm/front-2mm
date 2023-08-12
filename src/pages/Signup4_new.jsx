@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 740px;
   background: white;
   border: 1px solid gray;
-  margin: auto;
+  margin: 30px auto;
 
   @media screen and (max-width: 768px) {
     width: 100%;

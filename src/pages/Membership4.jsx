@@ -79,27 +79,16 @@ const Membership4 = () => {
 
   const onClickSign = () => {
     if (isGroupOClicked) {
-      navigate("/Sign1_old");
+      navigate("/Signup1_old");
     } else if (isGroupXClicked) {
-      navigate("/Sign1_new");
+      navigate("/Signup1_new");
     }
-  };
-
-  const onClickBack = () => {
-    navigate("/Membership3");
   };
 
   return (
     <Container>
-      <Back onClick={onClickBack}>
-        <img src={`${process.env.PUBLIC_URL}/images/back_btn.svg`} alt="back" />
-      </Back>
-      <Title>
-        <img
-          src={`${process.env.PUBLIC_URL}/images/title_text.svg`}
-          alt="title"
-        />
-      </Title>
+      <Back>&nbsp;</Back>
+      <Title></Title>
       <SubTitle>
         이순재님, <br />
         참여할 모임이 있으신가요?

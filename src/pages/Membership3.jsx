@@ -59,21 +59,14 @@ const NextBtn = styled.div`
 
 const Membership3 = () => {
   const navigate = useNavigate();
-  //Membership4로 이동
-  const onClickMembership4 = () => {
-    navigate("/Membership4");
-  };
 
-  // back_btn 이동
-  const onClickBack = () => {
-    navigate("/Membership2");
+  const onClickMembership4 = () => {
+    navigate("/Login");
   };
 
   return (
     <Container>
-      <Back onClick={onClickBack}>
-        <img src={`${process.env.PUBLIC_URL}/images/back_btn.svg`} alt="back" />
-      </Back>
+      <Back>&nbsp;</Back>
       <Title>
         <img
           src={`${process.env.PUBLIC_URL}/images/title_text.svg`}

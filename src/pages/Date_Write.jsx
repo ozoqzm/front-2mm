@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 740px;
   background: white;
   border: 1px solid gray;
-  margin: auto;
+  margin: 30px auto;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -81,6 +81,12 @@ const NewBtn = styled.div`
 `;
 
 const Date_Write = () => {
+  const navigate = useNavigate();
+
+  const onClick = () => {
+    navigate("/Date_List");
+  };
+
   return (
     <Container>
       <Back>
@@ -97,7 +103,7 @@ const Date_Write = () => {
         <img src={`${process.env.PUBLIC_URL}/images/subtitle_write.svg`} />
       </SubTitle2>
       <InputDate2></InputDate2>
-      <NewBtn>
+      <NewBtn onClick={onClick}>
         <img src={`${process.env.PUBLIC_URL}/images/newbtn.svg`} />
       </NewBtn>
     </Container>

@@ -121,7 +121,7 @@ const GroupHome = () => {
   };
   // 일정으로 이동
   const gotoPlan = () => {
-    //navigate("/Album");
+    navigate("/Date_List");
   };
   return (
     <Container>
