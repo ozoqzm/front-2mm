@@ -61,15 +61,10 @@ const Login = () => {
   const gotoPasswd = () => {
     navigate("/Passwd");
   };
-  const gotoBack = () => {
-    navigate("/");
-  };
 
   return (
     <Container>
-      <Back onClick={gotoBack}>
-        <img src={`${process.env.PUBLIC_URL}/images/backbtn.svg`} />
-      </Back>
+      <Back>&nbsp;</Back>
       <Title>
         <img src={`${process.env.PUBLIC_URL}/images/logintitle.svg`} />
       </Title>

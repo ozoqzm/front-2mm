@@ -1,6 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   position: relative;
@@ -73,9 +73,17 @@ const PlusBtn = styled.div`
 `;
 
 const Date_List = () => {
+  const navigate = useNavigate();
+
+  const gotoNext = () => {
+    navigate("/Date_Detail");
+  };
+  const gotoBack = () => {
+    navigate("/GroupHome");
+  };
   return (
     <Container>
-      <Back>
+      <Back onClick={gotoBack}>
         <img src={`${process.env.PUBLIC_URL}/images/backbtn.svg`} />
       </Back>
       <Year>
@@ -93,7 +101,7 @@ const Date_List = () => {
       <Date_Whitebox>
         <img src={`${process.env.PUBLIC_URL}/images/date_whitebox.svg`} />
       </Date_Whitebox>
-      <PlusBtn>
+      <PlusBtn onClick={gotoNext}>
         <img src={`${process.env.PUBLIC_URL}/images/plusbtn.svg`} />
       </PlusBtn>
     </Container>

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const Container = styled.div`
   position: relative;
@@ -10,7 +9,7 @@ const Container = styled.div`
   height: 740px;
   background: white;
   border: 1px solid gray;
-  margin: auto;
+  margin: 30px auto;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -48,22 +47,13 @@ const ImageUpload = styled.div`
   left: 30px;
   flex-shrink: 0;
   border-radius: 16px;
+  overflow: hidden; /* 이미지를 컨테이너 크기에 맞게 보이도록 설정 */
 `;
 
-const InputGroupname = styled.input`
-  position: relative;
-  width: 300px;
-  height: 50px;
-  left: 22px;
-  top: 55px;
-  border-radius: 7px;
-  border: 1.5px solid #0085ff;
-  font-size: 20px;
-  padding-left: 15px;
-
-  ::placeholder {
-    color: #7c7c7c;
-  }
+const ImageUploadImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const NextBtn = styled.button`
@@ -83,7 +73,7 @@ const Signup3_old = () => {
   };
 
   const handleNextClick = () => {
-    navigate("/signup3_new");
+    navigate("/Home");
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -105,9 +95,17 @@ const Signup3_old = () => {
         <img src={`${process.env.PUBLIC_URL}/images/detail_show.svg`} />
       </Detail>
       <ImageUpload>
-        <label htmlFor="imageUploadInput">
-          <img src={`${process.env.PUBLIC_URL}/images/image_upload.svg`} />
-        </label>
+        {/* 선택한 이미지가 있을 경우에만 이미지 보여주기 */}
+        {selectedImage ? (
+          <ImageUploadImage
+            src={URL.createObjectURL(selectedImage)}
+            alt="Uploaded"
+          />
+        ) : (
+          <label htmlFor="imageUploadInput">
+            <img src={`${process.env.PUBLIC_URL}/images/image_upload.svg`} />
+          </label>
+        )}
         <input
           type="file"
           id="imageUploadInput"
@@ -117,7 +115,6 @@ const Signup3_old = () => {
         ></input>
       </ImageUpload>
       <NextBtn onClick={handleNextClick}>
-        {" "}
         {/* Call handleNextClick */}
         <img src={`${process.env.PUBLIC_URL}/images/startbtn.svg`} />
       </NextBtn>

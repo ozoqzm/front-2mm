@@ -58,17 +58,12 @@ const NextBtn = styled.div`
 
 const Passwd = () => {
   const navigate = useNavigate();
-  const gotoBack = () => {
-    navigate("/Login");
-  };
   const gotoHome = () => {
-    navigate("/Home");
+    navigate("/Membership4");
   };
   return (
     <Container>
-      <Back onClick={gotoBack}>
-        <img src={`${process.env.PUBLIC_URL}/images/backbtn.svg`} />
-      </Back>
+      <Back>&nbsp;</Back>
       <Title>
         <img src={`${process.env.PUBLIC_URL}/images/logintitle.svg`} />
       </Title>

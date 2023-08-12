@@ -85,7 +85,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const gotoAdd = () => {
-    navigate("/Signup1_new");
+    navigate("/Membership4");
   };
   const logoutfunc = () => {
     // 로그아웃 부분 추가..

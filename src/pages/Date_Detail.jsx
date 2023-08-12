@@ -65,6 +65,12 @@ const PlusBtn = styled.div`
 `;
 
 const Date_Detail = () => {
+  const navigate = useNavigate();
+
+  const gotoNext = () => {
+    navigate("/Schedule1");
+  };
+
   return (
     <Container>
       <Back>
@@ -82,7 +88,7 @@ const Date_Detail = () => {
       <Next>
         <img src={`${process.env.PUBLIC_URL}/images/next.svg`} />
       </Next>
-      <PlusBtn>
+      <PlusBtn onClick={gotoNext}>
         <img src={`${process.env.PUBLIC_URL}/images/plusbtn.svg`} />
       </PlusBtn>
     </Container>
