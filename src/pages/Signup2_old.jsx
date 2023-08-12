@@ -162,19 +162,7 @@ const Signup2_old = () => {
           alt="WhiteBox"
         />
         <ImageUpload>
-          <label htmlFor="imageUploadInput">
-            <img
-              src={`${process.env.PUBLIC_URL}/images/image_upload.svg`}
-              alt="Upload"
-            />
-          </label>
-          <input
-            type="file"
-            id="imageUploadInput"
-            accept="image/*"
-            onChange={handleImageUpload}
-            style={{ display: "none" }}
-          ></input>
+          <img src={`${process.env.PUBLIC_URL}/images/image_upload.svg`} />
         </ImageUpload>
         <GroupName placeholder="화목한 우리 가족">
           {groupname}화목한 우리 가족
@@ -183,23 +171,10 @@ const Signup2_old = () => {
           {groupdetail}세상에서 제일 멋진 우리 집
         </GroupDetail>
         <OneContainer>
-          <label htmlFor="imageUploadInput">
-            <img
-              src={`${process.env.PUBLIC_URL}/images/image_upload.svg`}
-              alt="Upload"
-            />
-          </label>
           <OneImage
             src={`${process.env.PUBLIC_URL}/images/one.svg`}
             alt="One"
           />
-          <input
-            type="file"
-            id="imageUploadInput"
-            accept="image/*"
-            onChange={handleImageUpload}
-            style={{ display: "none" }}
-          ></input>
         </OneContainer>
         <One_Name>
           <img
@@ -208,7 +183,7 @@ const Signup2_old = () => {
           />
         </One_Name>
       </WhiteBox>
-      <NextBtn>
+      <NextBtn onClick={handleNextClick}>
         <img src={`${process.env.PUBLIC_URL}/images/nextbtn.svg`} alt="Next" />
       </NextBtn>
     </Container>
